@@ -1,14 +1,23 @@
 // 创建pages/about.tsx 文件即可使用/about 访问
 // "use client"; //如果要使用点击事件，则必须是客户端组件，必须加上 use client
 import Image from "next/image";
+import { Button } from "antd";
+import { useRouter } from "next/router";
+
 const Index = ({ data, extra }: any) => {
   console.log("about extra=", extra);
   // NEXT_PUBLIC_ 开头的环境变量可以在客户端使用
   console.log("process.env", process.env["NEXT_PUBLIC_TEST_URL"]);
-
+  const router = useRouter();
+  const toOther = () => {
+    router.push("/other");
+  };
   return (
     <div>
-      这里是about
+      这里是about{" "}
+      <Button type="primary" onClick={toOther}>
+        按钮1
+      </Button>
       <div>姓名：{data.name}</div>
       <div>体重：{data.weight}</div>
       <div>身高：{data.height}</div>

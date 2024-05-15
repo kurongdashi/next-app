@@ -13,7 +13,7 @@ const Index = ({ data, extra }: any) => {
       <div>
         <Button type="primary" onClick={toOther}>
           按钮1
-        </Button>{" "}
+        </Button>
       </div>
       <div>这里是首页面</div>;
     </div>
